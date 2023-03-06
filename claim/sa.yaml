@@ -1,5 +1,5 @@
 apiVersion: vcc.innovation.io/v1alpha1
-kind: sa
+kind: SA
 metadata:
   name: account
 spec:
