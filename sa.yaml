@@ -1,7 +1,7 @@
 apiVersion: vcc.innovation.io/v1alpha1
-kind: StorageAzure
+kind: SA
 metadata:
   name: account
 spec:
   parameters:
-    prefix: crossplanetestrg999
+    prefix: stcrossplanetestrg201
