@@ -1,7 +1,0 @@
-apiVersion: vcc.innovation.io/v1alpha1
-kind: SA
-metadata:
-  name: account
-spec:
-  parameters:
-    prefix: stcrossplanetestrg201
