@@ -1,20 +1,27 @@
 
 # Overview
 - Developers, DevOps, App Operators are using different tools and methods to maintain infrastructure hosted in multiple platforms, deploying and maintaining applications into those infrastructures.
-- Building culture isn’t just about communication and shared values— it’s also about tools.
-- To deliver high-quality code fast and safely, we need a good developer platform
+- Building culture isn’t just about communication and shared values — it’s also about tools.
+- To deliver high-quality code fast and safely, we need a good developer platform.
+- Let's build our common platforms like the cloud vendors build theirs - with a unified control plane.
 
+## What is Crossplane
+Crossplane is a powerful tool for managing cloud-native infrastructure using a Kubernetes-style API.
+That one of UCP concept implementations.
+
+![image](lbOSlqPnmmECrQ.png)
 
 ## Demo goals
-- use crossplane to create opinionated offering to order and deploy azure RG and SA
-- create composition, to expose only minimum amount of params
+- show crossplane capabilities, based on simple cloud deployment
+- use crossplane to create an opinionated offering to order and deploy azure RG and SA
+- create composition, to expose only a minimum amount of params
 
 ## Why k8s for infrastructure provisioning
 Kubernetes is powerful for two big reasons.
 
 - The first is that Kubernetes allows you to treat multiple host
 servers - or "Nodes" - as a single computer. This means that
-that Kubernetes will auto-schedule your containers to Nodes
+Kubernetes will auto-schedule your containers to Nodes
 that have room for them.
 - The second reason Kubernetes is powerful is because of its
 declarative API. "Declarative" means that you "declare" your
@@ -28,16 +35,13 @@ The Kubernetes API Server is the central, most important part
 about a cluster because it’s the source of truth for both the
 desired and actual state of your cluster’s resources.
 
-## What is Crossplane
-Tool to build control planes without needing to write code
 
-![image](lbOSlqPnmmECrQ.png)
 
 ## Crossplane vs Terraform
 
 - Both allow engineers to model their infrastructure as
 declarative configuration
-- Both support managing a myriad of diverse infrastructure using
+- Both support managing a myriad of diverse infrastructures using
 "provider" plugins
 - Both are open-source tools with strong communities
 - The key difference is that Crossplane is a control plane, where
@@ -47,7 +51,7 @@ planes.
 Composite Resource
 - Terraform sits in front of many APIs, but it does not offer its
 own.
-- Teams automates by committing their Terraform
+- Teams automate by committing their Terraform
 configuration(s) to revision control  (git) and executing
 Terraform as part of their CI/CD pipeline.
 - Terraform is a command line tool  - not a control plane.
@@ -72,7 +76,7 @@ sequenceDiagram
 autonumber
     Developer-->>Git: Create a repository from template and trigger CI
     Git-->>Flux: Register repo as a Source
-    Flux-->>Flux: Creaate base Kustomization from the template folder
+    Flux-->>Flux: Create base Kustomization from the template folder
     Flux-->>Crossplane: Push base claims to the cluster
     Crossplane-->>Cloud Resources: Build base Infrastructure with Crossplane
     Cloud Resources-->>Developer: Consume cloud resources
@@ -113,7 +117,7 @@ flowchart LR
 
 ## Tools
 - Flux as GitOps, but the same could be achieved with ArgoCD or Rancher Fleet
-- Kind k8s cluster, AKS, EKS or any managed service is fine too
+- Kind k8s cluster, AKS, EKS, or any managed service is fine too
 - kubectl
 - GitHub (Flux infra repository, claim repository)
 - Crossplane and Crossplane CLI
