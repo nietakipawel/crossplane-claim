@@ -1,7 +1,1 @@
-apiVersion: innovation.io/v1beta2
-kind: vcc
-metadata:
-  name: vcc-account
-spec:
-  parameters:
-    prefix: stcrossplanetestrg302
+
