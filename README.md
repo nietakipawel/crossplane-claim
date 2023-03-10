@@ -66,7 +66,7 @@ Terraform as part of their CI/CD pipeline.
 
 ```mermaid
 flowchart TB
-    A[Create VM]-->B[Install Kind]-->C[Install Crossplane Azure Provider]-->D[Create k8s Azure credentials]-->E[Install ProviderConfig]-->F[Create CompositeResource to Deploy RG and SA]-->G[Create Flux Infra repo]-->H[Create Flux Claim repo]-->I[Install and configure Flux]-->J[Claim for the resources]
+    B[Install Kind (k8s)]-->C[Install Crossplane Azure Provider]-->D[Create k8s Azure credentials]-->E[Install ProviderConfig]-->F[Create CompositeResource to Deploy RG and SA]-->G[Create Flux Infra repo]-->H[Create Flux Claim repo]-->I[Install and configure Flux]-->J[Claim for the resources]
 ```
 
 ## GitOps Flow
